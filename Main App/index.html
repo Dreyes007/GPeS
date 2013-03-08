@@ -1,25 +1,62 @@
-<!Doctype html>
+	<!Doctype html>
 
-<!--Daniel Reyes, ASDI 1303, HTML5 for GPes App-->
+	<!--Daniel Reyes, ASDI 1303, HTML5 for GPes App-->
 
 	<html lang="en">
 	
-	<head>
-		<meta charset="utf-8">
+		<head>
 	
-		<title>Gold GPeS</title>
-	
-	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<!-- Mobile IE needs ClearType for smoothing fonts -->
-		<meta http-equiv="cleartype" content="on">
+			<title>Mobile Menu</title>
 	
 	
+		</head>
 	
-	</head>
+	<body>
 	
+		<section id="information" data-role="page">
+		
+			<header>
+				<h1>Personal Information</h1>
+			</header>
+			
+			<section data-role="content">
+			
+				<div data-role="fieldcontain">
+					<label for="firstName">*First Name:</label>
+					<input type="text" name="firstName" id="fname" value="" placeholder="First Name" data-mini="true" class="required" />
+					<span class="hint">*First Name Required</span>
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="lastName">*Last Name:</label>
+					<input type="text" name="lastName" id="lname" value="" placeholder="Last Name" data-mini="true" class="required" />
+					<span class="hint">*Last Name Required</span>
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="email">*Email:</label>
+					<input type="email" name="email" id="email" value="" placeholder="abc123@email.com" data-mini="true" class="required email" />
+					<span class="hint">*Email Required</span>
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="phone">*Phone:</label>
+					<input type="tel" name="phone" id="phone" value="" placeholder="123 456-7890" data-mini="true" class="required tel" />
+					<span class="hint">*Phone Number Required</span>
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="address">*Address:</label>
+					<textarea name="address" id="address" value="" data-mini="true" placeholder="5009 MIU St, Melbourne, Fl 32903"></textarea>
+					<span class="hint">*Address Required</span>
+				</div>
+			</section>
+			
+			
+			
+		</section>
+		
+		
+	</body>
 	
 	</html>
