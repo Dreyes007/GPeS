@@ -30,6 +30,90 @@
 		</head>
 	
 	<body>
+	<!--This is the 1st page-->
+		<div data-role="page" id="home" class="mypage">
+		
+			<div data-role="header" data-position="fixed">
+				<h1>Booties</h1>
+			</div>
+			
+			<div data-role="content">
+			
+				<ul data-role="listview" data-inset="true">
+					<li>
+						<a href="#error" data-rel="dialog">
+						<img src="images/beef.png" />
+						<h5>Featured Items</h5>
+						</a>
+					</li>
+					
+					<li>
+						<a href="#error" data-rel="dialog">
+						<img src="images/location.png" />
+						<h5>Find a Location</h5>
+						</a>
+					</li>
+					
+					<li>
+						<a href="#information">
+						<img src="images/mobile.png" />
+						<h5>Place an Order</h5>
+						</a>
+					</li>
+					
+					<li>
+					<a href="#error" data-rel="dialog">
+						<img src="images/offers.png" />
+						<h5>Special Offers</h5>
+					</a>
+					</li>
+					
+					<li>
+						<a href="#error" data-rel="dialog">
+						<img src="images/iphone.png" />
+						<h5>QR Scanner</h5>
+						</a>
+					</li>
+					
+					<li>
+						<a href="#error" data-rel="dialog">
+						<img src="images/import.png" />
+						<h5>Join our e-Club</h5>
+						</a>
+					</li>
+													
+				</ul>
+
+			
+			</div>
+			
+			
+			
+			<nav data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#error" data-rel="dialog" data-icon="star">About</a></li>
+						<li><a href="#error" data-rel="dialog" data-icon="info">Offers</a></li>
+						<li><a href="#error" data-rel="dialog" data-icon="search">Locations</a></li>
+					</ul>
+				</div>
+			</nav>
+			
+		</div>
+		
+	<!--This guides to an error page-->
+		<div data-role="page" id="error">
+			<div data-role="header">
+				<h1>404 Error Page</h1>
+			</div>
+			<div data-role="content">
+				<p>This page cannot be found</p>
+			
+				<a href="#home" data-role="button">OK</a>	
+				
+			</div>						
+		</div>
 	
 	<!--This is the section to enter the personal information-->
 	
@@ -76,33 +160,173 @@
 					
 				</form>
 				
+				<a href="#paymentInfo" data-role="button" data-inline="true">Next</a>
+				<input type="reset" data-role="button" data-inline="true" value="Clear Info" />
+				
 			</section>
 			
-			<footer data-theme="b">
+
 			
-				<nav data-role="navbar">
-				
-					<ul>
-						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#about" data-icon="star">About</a></li>
-						<li><a href="#offers" data-icon="info">Offers</a></li>
-					</ul>
-				
+				<nav data-role="footer" data-position="fixed">
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#home" data-icon="home">Home</a></li>
+							<li><a href="#error" data-rel="dialog" data-icon="star">About</a></li>
+							<li><a href="#error" data-rel="dialog" data-icon="info">Offers</a></li>
+							<li><a href="#error" data-rel="dialog" data-icon="search">Locations</a></li>
+						</ul>
+					</div>
 				</nav>
 			
-			</footer>
+
 			
 		</div>
 		
+		<!--Payment Information page-->
 		<section id="paymentInfo" data-role="page">
 			
-			<header>
+			<div data-role="header" data-position="fixed">
 				<h1>Payment Information</h1>
-			</header>
+			</div>
 			
-			<section data-role"content">
+			<section data-role="content">
+			
+			<!--Payment Checkboxes-->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<legend>Payment Type:</legend>
+								<input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+								<label for="checkbox-1">Cash</label>
+								<input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
+								<label for="checkbox-2">Check</label>
+								<input type="checkbox" name="checkbox-3" id="checkbox-3" class="custom" />
+								<label for="checkbox-3">Credit Card</label>
+						</fieldset>
+					</div>
+					
+			<!--Credit Card Type-->
+					<fieldset data-role="controlgroup" data-mini="true">
+						<legend>Credit Card:</legend>						
+							<input type="radio" name="card" id="radioChoice-1" value="choice-1" checked="checked" class="required" />
+							<label for="radioChoice-1">Visa</label>
+						
+							<input type="radio" name="card" id="radioChoice-2" value="choice-2" />
+							<label for="radioChoice-2">Master Card</label>
+						
+							<input type="radio" name="card" id="radioChoice-3" value="choice-3" />
+							<label for="radioChoice-3">American Express</label>					
+					</fieldset>
+					
+					<div data-role="fieldcontain">					
+						<label for="cardName">*Name on Card:</label>									
+					    <input type="text" name="cardName" id="cname" value="" placeholder="King Kong" data-mini="true"class="required" />
+						<span class="hint">*Name Required</span>
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for="cardNumber">*Card Number:</label>
+						<input type="number" name="cardNumber" id="cNumber" value="" placeholder="XXXX-XXXX-XXXX-XXXX" data-mini="true" class="required 	     						tel" />
+						<span class="hint">*Phone Number Required</span>
+					</div>
+				
+				<!--Card Expiration date-->
+				<div data-role="fieldcontain">
+					
+					<fieldset data-role="controlgroup" name="date" data-type="horizontal" data-mini="true" class="required">
+						<legend>Expiration Date:</legend>
+						<select name="date" id="month">
+							<option>Month</option>
+							<option value="Jan">January</option>
+							<option value="Feb">February</option>
+							<option value="Mar">March</option>
+							<option value="Apr">April</option>
+							<option value="May">May</option>
+							<option value="Jun">June</option>
+							<option value="Jul">July</option>
+							<option value="Aug">August</option>
+							<option value="Sep">September</option>
+							<option value="Oct">October</option>
+							<option value="Nov">November</option>
+							<option value="Dec">December</option>
+						</select>
+						
+						<select name="date" id="day">
+							<option>Date</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
+						</select>
+						
+						<select name="date" id="year">
+							<option>Year</option>
+							<option value="2013">2013</option>
+							<option value="2014">2014</option>
+							<option value="2015">2015</option>
+							<option value="2016">2016</option>
+							<option value="2017">2017</option>
+							<option value="2018">2018</option>
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+						</select>
+					</fieldset>
+				</div>
+				
+			<!--Slider for Order Amount-->
+				<div data-role="fieldcontain">
+					<label for="slider-1">How Many Orders</label>
+					<input type="range" name="slider-1" id="slider-1" value="5" min="1" max="5" data-highlight="true" data-popup-enable="true" />
+				</div>
+				
+			<!--Delivery/Carry-Out Flip Toggle Switch-->
+				<div data-role="fieldcontain">
+					<label for="flip-1">Order Type:</label>
+						<select name="flip-1" id="flip-1" data-role="slider">
+							<option value="yes">Delivery</option>
+							<option value="no">Carry-Out</option>
+						</select>
+						
+				</div>
 				
 			</section>
+			
+				<nav data-role="footer" data-position="fixed">
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#home" data-icon="home">Home</a></li>
+							<li><a href="#error" data-rel="dialog" data-icon="star">About</a></li>
+							<li><a href="#error" data-rel="dialog" data-icon="info">Offers</a></li>
+							<li><a href="#error" data-rel="dialog" data-icon="search">Locations</a></li>
+						</ul>
+					</div>
+				</nav>
 			
 		</section>
 		
